@@ -1,0 +1,55 @@
+body {
+    margin: 0 5px;
+    background: powderBlue;
+    padding: 5px;
+    text-align: center;
+    font-family: Arial;
+    font-size: 1rem;
+}
+
+h1 {
+    margin: 5px;
+}
+
+h1:hover {
+    cursor: pointer;
+}
+
+#header {
+    margin: 5px;
+}
+
+.inputs {
+    margin: 0 1rem 0 0;
+    border: 1px solid whiteSmoke;
+    border-radius: 5px;
+    background: whiteSmoke;
+    padding: 5px;
+    font-family: Arial;
+    font-size: 1rem;
+}
+
+.inputs:hover {
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+#status {
+    color: red;
+}
+
+#footer {
+    text-align: left;
+}
+
+.selectData {
+    margin: 10px 0;
+}
+
+.date {
+    display: inline-block;
+}
+
+#smooth {
+    width: 3rem;
+}

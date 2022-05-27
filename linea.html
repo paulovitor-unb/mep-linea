@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Linea - Bloco B</title>
+
+        <link rel="stylesheet" href="./lineaStyle.css" />
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/highcharts-more.js"></script>
+        <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+        <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+        <script defer src="./lineaMain.js"></script>
+    </head>
+
+    <body>
+        <h1 onclick="infoDiv.hidden = !infoDiv.hidden">Linea - Bloco B</h1>
+        <div id="header">
+            <label> Reservatório: </label>
+            <select
+                class="inputs"
+                name="senderId"
+                onchange="updateForm('senderId')"
+            >
+                <option value="sB">Superior</option>
+                <option hidden selected value="iB">Inferior</option>
+            </select>
+            <label> Visualizar: </label>
+            <select
+                class="inputs"
+                name="chartType"
+                onchange="updateForm('chartType')"
+            >
+                <option hidden value="gauge">Instantâneo</option>
+                <option value="graph">Gráfico</option>
+            </select>
+        </div>
+        <div>
+            <strong id="status"></strong>
+        </div>
+        <div>
+            <figure class="highcharts-figure">
+                <div id="chartGauge"></div>
+            </figure>
+            <figure hidden class="highcharts-figure">
+                <div id="chartGraph"></div>
+            </figure>
+        </div>
+        <div hidden id="footer">
+            <div class="selectData" id="rangeDiv">
+                <label> Últimos valores: </label>
+                <select
+                    class="inputs"
+                    name="range"
+                    onchange="updateForm('range')"
+                >
+                    <option hidden value=""></option>
+                    <option selected id="stdDataSize" value="0"></option>
+                    <option value="900">15 minutos</option>
+                    <option value="3600">1 hora</option>
+                    <option value="10800">3 horas</option>
+                    <option value="86400">24 horas</option>
+                </select>
+            </div>
+            <div class="selectData" id="datesDiv">
+                <div class="date">
+                    <label> Início: </label>
+                    <br />
+                    <input
+                        class="inputs"
+                        name="start"
+                        onchange="updateForm('date')"
+                        type="datetime-local"
+                        value=""
+                    />
+                </div>
+                <div class="date">
+                    <label> Final: </label>
+                    <br />
+                    <input
+                        class="inputs"
+                        name="end"
+                        onchange="updateForm('date')"
+                        type="datetime-local"
+                        value=""
+                    />
+                </div>
+            </div>
+            <div hidden id="infoDiv">
+                <label> Suavizar gráfico: </label>
+                <input
+                    class="inputs"
+                    id="smooth"
+                    onchange="updateForm('smooth')"
+                    type="number"
+                    value="0"
+                    min="0"
+                    max="10"
+                />
+                <label id="sensorData"></label>
+            </div>
+        </div>
+    </body>
+</html>
